@@ -85,7 +85,8 @@ export const useModifierIconComponents = (file: Nullable<FileData>) => {
 
 const _extname = (fileName: string) => {
     const parts = fileName.split('.');
-    if (parts.length) {
+    // 文件名如 .gitignore，ext，test.jpg
+    if (parts.length > 1) {
         return `.${parts[parts.length - 1]}`;
     }
     return '';
